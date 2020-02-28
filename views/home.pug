@@ -1,0 +1,13 @@
+extends layouts/main
+include mixins/videoBlock
+
+//-.video는 div class = videos로 지정해준것
+//-for-each에 의해 videos 객체는 controller에서 넘겨준 것을 받아서 함.
+//- videoblock은 제목과 내용의 반복태그를 넣고 써주는 것. 재활용성 올라감!
+block content
+    .videos 
+        each item in videos 
+            +videoBlock({
+                title : item.title,
+                description : item.description
+            })
